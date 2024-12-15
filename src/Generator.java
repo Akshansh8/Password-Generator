@@ -15,7 +15,7 @@ public class Generator {
     }
 
     public void mainLoop() {
-        System.out.println("Welcome to Ziz Password Services :)");
+        System.out.println("Welcome to Password Services :)");
         printMenu();
 
         String userOption = "-1";
@@ -37,7 +37,9 @@ public class Generator {
                     printUsefulInfo();
                     printMenu();
                 }
-                case "4" -> printQuitMessage();
+                case "4" ->{ printQuitMessage();
+                	System.exit(0);
+                }
                 default -> {
                     System.out.println();
                     System.out.println("Kindly select one of the available commands");
@@ -134,8 +136,13 @@ public class Generator {
             }
         }while(correctParams);
         
-        System.out.println("Great! Now enter the length ofthe password");
+        System.out.println("Great! Now enter the length of the password");
         int length = keyboard.nextInt();
+        while(length < 4) {
+        	System.out.println("The password should be greater than 4 in the size, please renter your length");
+        	length = keyboard.nextInt();
+        	if(length >= 4) break;
+        }
         
         final Generator generator = new Generator(IncludeUpper, IncludeLower, IncludeNum, IncludeSym);
         final Password password = generator.generatePassword(length);

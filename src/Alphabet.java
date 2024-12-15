@@ -11,6 +11,7 @@ public class Alphabet {
 	public Alphabet(boolean uppercaseIncluded, boolean lowercaseIncluded, boolean numbersIncluded, boolean specialCharactersIncluded) {
 		pool = new StringBuilder();
 		
+		//creating a pool of characters
 		if(uppercaseIncluded)
 		{
 			pool.append(UPPERCASE_LETTERS);
