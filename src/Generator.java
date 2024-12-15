@@ -47,7 +47,7 @@ public class Generator {
         }
     }
     
-    private Password generateePassword(int length)
+    private Password generatePassword(int length)
     {
     	final StringBuilder pass = new StringBuilder("");
     	final int alphabetLength = alphabet.getAlphabet().length();
@@ -138,7 +138,7 @@ public class Generator {
         int length = keyboard.nextInt();
         
         final Generator generator = new Generator(IncludeUpper, IncludeLower, IncludeNum, IncludeSym);
-        final Password password = generator.GeneratePassword(length);
+        final Password password = generator.generatePassword(length);
         System.err.println("Your generated password ->"+ password);
     }
     
